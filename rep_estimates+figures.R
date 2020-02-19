@@ -1,4 +1,6 @@
-### models and graphs for Ethnicities (journal) ###
+### models and graphs for “Who Should be Admitted? Conjoint Analysis of South Korean Attitudes toward Immigrants” 
+## paper authors: Steven Denney (University of Toronto) and Christopher Green (Leiden University)
+## published in Ethnicities
 ## code by Steven Denney - steven.denney@utoronto.ca
 
 ## load packages
