@@ -1,5 +1,5 @@
 # ROK_conjoint_immigrants
-Replication materials for “Who Should be Admitted? Conjoint Analysis of South Korean Attitudes toward Immigrants”
+Replication materials for “Who Should be Admitted? Conjoint Analysis of South Korean Attitudes toward Immigrants", a paper by Steven Denney (University of Toronto) and Christopher Green (Leiden University)
 
 There are three data files and two recplication code files.
 
