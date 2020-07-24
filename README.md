@@ -1,7 +1,8 @@
 # ROK_conjoint_immigrants
 Replication materials for “Who Should be Admitted? Conjoint Analysis of South Korean Attitudes toward Immigrants," a paper by Steven Denney (University of Toronto) and Christopher Green (Leiden University).
 
-Denney, S., & Green, C. (2020). Who should be admitted? Conjoint analysis of South Korean attitudes toward immigrants. Ethnicities. https://doi.org/10.1177/1468796820916609
+Citation
+>Denney, S., & Green, C. (2020). Who should be admitted? Conjoint analysis of South Korean attitudes toward immigrants. Ethnicities. https://doi.org/10.1177/1468796820916609
 
 
 The abstract is as follows:
