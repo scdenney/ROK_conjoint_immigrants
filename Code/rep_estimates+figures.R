@@ -1,5 +1,5 @@
 ### models and graphs for Ethnicities (journal) ###
-## code by Steven Denney - steven.denney@utoronto.ca
+## code by Steven Denney - stevencdenney@gmail.com
 
 ## load packages
 library(tidyverse)
@@ -9,20 +9,20 @@ library(cregg)
 ## read .csv files
 #read.csv()
 
-#### OLS models from manuscript - figures 2 and 4-6 ####
+#### regression models from manuscript - figures 2 and 4-6 ####
 
-amces_baseline <- cj(skconjoint, Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
+amces_baseline <- cj(skconjoint, Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
                      id = ~Respid, estimate = "amce")
 
-amces_college <- cj(skconjoint, Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
+amces_college <- cj(skconjoint, Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
                     id = ~Respid, estimate = "amce", 
                     by = ~College)
 
-amces_stateid <- cj(skconjoint, Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
+amces_stateid <- cj(skconjoint, Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
                     id = ~Respid, estimate = "amce", 
                     by = ~State.ID2)
 
-amces_polid <- cj(skconjoint, Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
+amces_polid <- cj(skconjoint, Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
                   id = ~Respid, estimate = "amce", 
                   by = ~Political.ID2)
 
@@ -141,7 +141,7 @@ pdamce <- position_dodge(0.6) # move them .05 to the left and right
 
 library(estimatr)
 
-m2 <- lm_robust(Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
+m2 <- lm_robust(Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
                 data=skconjoint, clusters=Respid, ci=T)
 summary(m2)
 
@@ -375,38 +375,38 @@ pr_imm_g = ggplot(pp_profiles, aes(x=Profile, y=Admit, colour=Country)) + theme_
 
 #### Models and figures for supplementary information ####
 
-amces_age <- cj(skconjoint, Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
+amces_age <- cj(skconjoint, Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
                 id = ~Respid, estimate = "amce", 
                 by = ~Age_cohorts)
 
-amces_gender <- cj(skconjoint, Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
+amces_gender <- cj(skconjoint, Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
                    id = ~Respid, estimate = "amce", 
                    by = ~Resp_gender)
 
-amces_income <- cj(skconjoint, Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
+amces_income <- cj(skconjoint, Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
                    id = ~Respid, estimate = "amce", 
                    by = ~Income_f)
 
-amces_immigrants <- cj(skconjoint, Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
+amces_immigrants <- cj(skconjoint, Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
                        id = ~Respid, estimate = "amce", 
                        by = ~Immigrants.Geo)
 
-amces_generation <- cj(skconjoint, Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
+amces_generation <- cj(skconjoint, Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
                        id = ~Respid, estimate = "amce", 
                        by = ~Generation)
 
-amce_baseline_rating <- cj(skconjoint, Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
-                           id = ~Respid, estimate = "amce") ## based on rating
+amce_baseline_rating <- cj(skconjoint, Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
+                           id = ~Respid, estimate = "amce") ## based on rating, note response variable name difference
 
-amces_profiles <- cj(skconjoint, Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
+amces_profiles <- cj(skconjoint, Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
                      id = ~Respid, estimate = "amce",
                      by = ~Profiles)
 
-amces_monitor <- cj(skconjoint, Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
+amces_monitor <- cj(skconjoint, Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
                     id = ~Respid, estimate = "amce",
                     by = ~Monitoring)
 
-amces_atypical <- cj(skconjoint, Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
+amces_atypical <- cj(skconjoint, Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity, 
                      id = ~Respid, estimate = "amce", 
                      by = ~Atypical)
 
@@ -521,7 +521,7 @@ amces_atypical <- cj(skconjoint, Immigrant_preferred ~ Application + Country + L
 
 #### Additional robustness check; randomzing question order ####
 
-amce_baseline_ran <- cj(skconjoint_ran, Immigrant_preferred ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity,
+amce_baseline_ran <- cj(skconjoint_ran, Immigrant_supported ~ Application + Country + Language + Profession + Employment + Gender + Ethnicity,
                         id = ~Respid, estimate = "amce")
 
 {
