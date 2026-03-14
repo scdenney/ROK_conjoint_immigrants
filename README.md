@@ -1,4 +1,7 @@
 # ROK_conjoint_immigrants
+
+[![DOI: Paper](https://img.shields.io/badge/DOI-10.1177%2F1468796820916609-blue?style=flat-square)](https://doi.org/10.1177/1468796820916609) [![Open Science](https://img.shields.io/badge/Open_Science-Replication_Materials-brightgreen?style=flat-square&logo=opensourceinitiative&logoColor=white)](https://github.com/scdenney/ROK_conjoint_immigrants)
+
 Replication materials for “Who Should be Admitted? Conjoint Analysis of South Korean Attitudes toward Immigrants," a paper by Steven Denney (University of Toronto) and Christopher Green (Leiden University).
 
 Source and citation:
